@@ -3,7 +3,7 @@
 ## Install
 
 ```bash
-npm install carbon-cli
+npm install -g carbon-cli
 ```
 
 ## Usage
