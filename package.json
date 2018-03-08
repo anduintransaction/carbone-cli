@@ -1,10 +1,10 @@
 {
   "name": "carbone-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Command line interface for Carbone.io",
   "main": "bin/carbone-cli.js",
   "bin": {
-    "carbone-cli": "./bin/carbon-cli"
+    "carbone-cli": "./bin/carbone-cli"
   },
   "repository": "git@github.com:anduintransaction/carbone-cli.git",
   "author": "Nguyen Duc Tam <tamnguyen@anduintransact.com>",
