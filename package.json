@@ -10,6 +10,6 @@
   "author": "Nguyen Duc Tam <tamnguyen@anduintransact.com>",
   "license": "MIT",
   "dependencies": {
-    "carbone": "^1.1.0"
+    "carbone": "^1.2.1"
   }
 }
