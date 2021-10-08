@@ -4,31 +4,39 @@ const fs = require('fs');
 const carbone = require('carbone');
 
 function usage () {
-  console.info('Usage: carbone-cli [input-file] [data-file] [output-file]');
-  console.info('  [input-file]\t\tTemplate in docx format');
+  console.info('Usage: carbone-cli [input-file] [data-file] [output-file] [option-file]');
+  console.info('  [input-file]\t\tTemplate file');
   console.info('  [data-file]\t\tData file in json format');
-  console.info('  [output-file]\t\tOutput file in docx format');
+  console.info('  [output-file]\t\tOutput file');
+  console.info('  [option-file]\t\tOption file in json format');
 }
 
-if (process.argv.length != 5) {
+if (process.argv.length < 5 || process.argv.length > 6) {
   usage();
   process.exit();
 }
 
 const inputFile = process.argv[2]
 const dataFile = process.argv[3]
-const outputFile = process.argv[4]
+var outputFile = process.argv[4]
+var optionsFile = {};
+
+if (process.argv.length == 6) {
+  optionsFile = JSON.parse(fs.readFileSync(process.argv[5], 'utf8'));
+}
 
 console.log(inputFile);
 console.log(dataFile);
 console.log(outputFile);
+console.log(optionsFile);
 
 const res = fs.readFileSync(dataFile, "utf-8");
 const data = JSON.parse(res);
 
-carbone.render(inputFile, data, function (err, result) {
+carbone.render(inputFile, data, optionsFile, function (err, result) {
   if (err) {
     return console.log(err);
   }
   fs.writeFileSync(outputFile, result);
+  process.exit();
 });
