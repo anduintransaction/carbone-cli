@@ -1,6 +1,6 @@
 {
   "name": "carbone-cli",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "description": "Command line interface for Carbone.io",
   "main": "bin/carbone-cli.js",
   "bin": {
@@ -10,6 +10,6 @@
   "author": "Nguyen Duc Tam <tamnguyen@anduintransact.com>",
   "license": "MIT",
   "dependencies": {
-    "carbone": "^1.1.0"
+    "carbone": "^3.1.0"
   }
 }
